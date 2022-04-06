@@ -1,0 +1,29 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+}
+
+#filename-box {
+  width: calc(100% - 389px);
+}
+
+.right {
+  float: right;
+}
+
+#main {
+  width: 100%;
+  height: calc(100% - 29px);
+  margin: 0px;
+  padding: 0px;
+}
+
+#edit-box {
+  width: 100%;
+  height: 100%;
+}
