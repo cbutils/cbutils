@@ -49,6 +49,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
 	document.getElementById("home-button").addEventListener("click", function() {
-		location.href = "home.html";
+		location.href = "../home.html";
 	}, false);
 })
