@@ -11,22 +11,24 @@ function download(filename, content) {
     document.body.removeChild(element);
 }
 
-// Start file download.
-document.getElementById("save-button").addEventListener("click", function() {
-    var filename = document.getElementById("filename-box").value;
-    if (filename == "") {
-    	filename = "filename.txt";
-    }
-    var content = document.getElementById("edit-box").value;
-    download(filename, content);
-}, false);
+document.addEventListener('DOMContentLoaded', (event) => {	
+	// Start file download.
+	document.getElementById("save-button").addEventListener("click", function() {
+	    var filename = document.getElementById("filename-box").value;
+	    if (filename == "") {
+		filename = "filename.txt";
+	    }
+	    var content = document.getElementById("edit-box").value;
+	    download(filename, content);
+	}, false);
 
-document.getElementById("open-button").addEventListener("click", function() {
-    var filename = document.getElementById("load-button").files[0].name;
-    document.getElementById("filename-box").value = filename;
-}, false);
+	document.getElementById("open-button").addEventListener("click", function() {
+	    var filename = document.getElementById("load-button").files[0].name;
+	    document.getElementById("filename-box").value = filename;
+	}, false);
 
 
-document.getElementById("home-button").addEventListener("click", function() {
-	location.href = "../index.html";
-}, false);
+	document.getElementById("home-button").addEventListener("click", function() {
+		location.href = "../index.html";
+	}, false);
+})
