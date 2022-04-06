@@ -23,8 +23,28 @@ document.addEventListener('DOMContentLoaded', (event) => {
 	}, false);
 
 	document.getElementById("open-button").addEventListener("click", function() {
-	    var filename = document.getElementById("load-button").files[0].name;
-	    document.getElementById("filename-box").value = filename;
+	    var file = document.getElementById("load-button").files[0];
+	    document.getElementById("filename-box").value = file.name;
+		
+		
+
+        var reader = new FileReader();
+
+        // Closure to capture the file information.
+        reader.onload = (function(theFile) {
+            return function(e) {
+
+                var content = e.target.result;
+                if (content) {
+                    // Inserting content into textarea, change id if you need
+                    var textarea = document.getElementById('textareaid');
+                    textarea.innerHTML = content;
+
+                }
+            };
+        })(file);
+
+        reader.readAsText(file);
 	}, false);
 
 
